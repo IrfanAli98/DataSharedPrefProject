@@ -13,4 +13,24 @@ class DataStoreViewModel(private val repository: DataStoreRepository) : ViewMode
             repository.setFnameLname(fname, lname)
         }
     }
+
+    fun getFname():String{
+        var fname = ""
+        viewModelScope.launch {
+            repository.getFirstName().collect{
+                fname = it
+            }
+        }
+        return fname
+    }
+
+    fun getLname(): String{
+        var lname = ""
+        viewModelScope.launch {
+            repository.getLastName().collect{
+                lname= it
+            }
+        }
+        return lname
+    }
 }

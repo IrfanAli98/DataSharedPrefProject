@@ -5,6 +5,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.map
 
 class DataStoreRepository(val context: Context) {
 
@@ -16,4 +18,15 @@ class DataStoreRepository(val context: Context) {
             it[Keys.Lname]=lname
         }
     }
+
+    fun getFirstName()=
+        context.dataStore.data.map {
+            it[Keys.Fname]?:"Unknown".toString()
+        }
+
+    fun getLastName()=
+        context.dataStore.data.map {
+            it[Keys.Lname]?:"Unknown".toString()
+        }
+
 }

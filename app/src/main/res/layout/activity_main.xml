@@ -35,12 +35,27 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Submit"
+            android:text="Submit"
             android:id="@+id/btn_submit"
             app:layout_constraintTop_toBottomOf="@id/et_lastName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textColorHint="Submit"/>
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get"
+            android:id="@+id/btn_Get"
+            app:layout_constraintTop_toBottomOf="@id/btn_submit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/btn_Get"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
